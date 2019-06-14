@@ -23,21 +23,27 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
-        <h4>Add Review</h4>
-
+      </div>
+          <h4>Add Review</h4>
         <%= form_for [@product, @review] do |f| %>
+
         <div class="form-group">
           <%= f.label :description %>
           <%= f.text_field :description, class: 'form-control' %>
         </div>
-        <%end%>
+
+        <div class="form-group">
+          <%= f.label :rating %>
+          <%= f.select :rating, ((1..5).map {|i| [i,i] }), class: 'form-control' %>
+        </div>
+        <% end %>
 
         <ul>
         <% @product.reviews.each do |review| %>
         <li style="list-style:none">Rating:<%=review.rating%>       <%=review.description%></li>
         <% end %>
         </ul>
-      </div>
+        
     </div>
   </article>
 
