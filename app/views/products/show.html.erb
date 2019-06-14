@@ -26,7 +26,7 @@
         <h4>Rewiews</h4>
         <ul>
         <% @product.reviews.each do |review| %>
-        <li style="list-style:none"><%=review.rating%>       <%=review.description%></li>
+        <li style="list-style:none">Rating:<%=review.rating%>       <%=review.description%></li>
         <% end %>
         </ul>
       </div>
