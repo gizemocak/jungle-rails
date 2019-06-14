@@ -24,7 +24,8 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
-          <h4>Add Review</h4>
+          <h4>Reviews</h4>
+
         <%= form_for [@product, @review] do |f| %>
 
         <div class="form-group">
@@ -36,6 +37,8 @@
           <%= f.label :rating %>
           <%= f.select :rating, ((1..5).map {|i| [i,i] }), class: 'form-control' %>
         </div>
+
+        <%= f.submit 'Add review', class: 'btn btn-primary' %>
         <% end %>
 
         <ul>
