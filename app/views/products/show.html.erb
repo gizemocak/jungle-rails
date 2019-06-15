@@ -45,10 +45,11 @@
         <ul>
         <% @product.reviews.each do |review| %>
         <li style="list-style:none">Rating:<%=review.rating%>       <%=review.description%></li>
-        
+         <% if review.user_id == session[:user_id] %>
        <%= link_to product_review_path(@product, review.id), method: :delete do %>
             <div><i>Delete review</i></div>
             <% end %>
+            <%end%>
         <% end %>
         </ul>
         
