@@ -42,7 +42,6 @@
         <%= f.submit 'Add review', class: 'btn btn-primary' %>
         <% end %>
       <%end%>
-
         <ul>
         <% @product.reviews.each do |review| %>
         <li style="list-style:none">Rating:<%=review.rating%>       <%=review.description%></li>
