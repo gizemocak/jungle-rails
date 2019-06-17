@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe User, type: :model do
-
+  #---------Validations---------#
   describe 'Validations' do
 
     it "is not valid without a password" do
@@ -49,8 +49,19 @@ RSpec.describe User, type: :model do
 
   end
 
+#--------authenticate_with_credentials-----------#
   describe '.authenticate_with_credentials' do
-    # examples for this class method here
+
+    it "email should be case insensetive" do
+      user = User.new(email:'GIZem_ocak@outlook.com', password:'1234567', password_confirmation: '1234567', first_name:'Gizem', last_name:'Ocak')
+      expect(user).to be_valid
+    end
+
+    it 'should pass when the user exists' do
+      gizem = User.create(email:'gizem_ocak@outlook.com', password:'1234567', password_confirmation: '1234567', first_name:'Gizem', last_name:'Ocak')
+      expect(User.authenticate_with_credentials(' GiZem_ocak@outlook.com', '1234567')).to eq(gizem)
+    end
+
   end
 
 end

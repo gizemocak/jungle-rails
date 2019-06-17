@@ -9,4 +9,17 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
 
   validates :password_digest, presence: true, length: { minimum: 4 }
+
+ #----- authenticate with credentials --------#
+  def self.authenticate_with_credentials(email, password)
+    email = email.gsub(' ', '')
+    email = email.downcase
+
+    user = User.find_by("lower(email) = ?", email)
+    if user && user.authenticate(password)
+      user
+    else
+      nil
+    end
+  end
 end
