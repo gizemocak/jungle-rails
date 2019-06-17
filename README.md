@@ -1,7 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
-
+A mini e-commerce application built with Rails 4.2.
 
 ## Setup
 
@@ -23,6 +22,14 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
+- Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+- PostgreSQL 9.x
+- Stripe
+
+## Screenshots
+
+!["Screenshot products page"](https://github.com/gizemocak/jungle-rails/blob/master/docs/feature-products.png?raw=true)
+!["Screenshot of ratings and reviews"](https://github.com/gizemocak/jungle-rails/blob/master/docs/product-rating-review.png?raw=true)
+!["Screenshot of my Cart"](https://github.com/gizemocak/jungle-rails/blob/master/docs/my-cart.png?raw=true)
+!["Screenshot of the purchase"](https://github.com/gizemocak/jungle-rails/blob/master/docs/purchase.png?raw=true)
+!["Screenshot of purchase receipt"](https://github.com/gizemocak/jungle-rails/blob/master/docs/purchase-receipt.png?raw=true)
