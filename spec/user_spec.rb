@@ -18,6 +18,11 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
 
+    it 'password length less than 5 characters is invalid' do
+      user = User.new(email: 'gizem_ocak@outlook.com', password: '1234')
+      expect(user).to_not be_valid
+    end
+
     it 'email must be unique' do
       user = User.new(email: 'gizem_ocak@outlook.com', password:'12345', password_confirmation: '12345', first_name:'Gizem', last_name:'Ocak')
       user.save
