@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
       )
     end
     order.save!
-    OrderMailer.with(order: order).welcome_email.deliver_later
+    OrderMailer.order_email(order).deliver_now
     order
   end
 
