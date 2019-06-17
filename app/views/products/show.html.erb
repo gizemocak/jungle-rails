@@ -24,7 +24,9 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
-          <h4>Reviews</h4>
+    </div>
+          <section>
+      <h4>Reviews</h4>
 
       <%if current_user%>
         <%= form_for [@product, @review] do |f| %>
@@ -50,8 +52,7 @@
          <%end%>
         <% end %>
         </ul>   
-
-    </div>
+     </section>
   </article>
 
 </section>
